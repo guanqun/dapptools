@@ -511,6 +511,7 @@ listP parser = between (char '[') (char ']') ((do skipSpaces
                                                   return a) `sepBy` (char ','))
 
 data AbiVals = NoVals | CAbi [AbiValue] | SAbi [SymWord]
+  deriving (Show)
 
 decodeBuffer :: [AbiType] -> Buffer -> AbiVals
 decodeBuffer tps (ConcreteBuffer b)
